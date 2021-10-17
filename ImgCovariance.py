@@ -3,8 +3,6 @@
 import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
-from numpy.core.fromnumeric import shape
-from definingfft import fft_online
 
 # reading image
 img = cv.imread('EncryptedImage.png', cv.IMREAD_GRAYSCALE)

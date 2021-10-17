@@ -82,7 +82,7 @@ cv.imshow(f'Edges_100_200', img_3)
 
 fft_online(argv=['EncryptedImage.png'])
 
-fft_online(argv=['testimg_2.png'])
+fft_online(argv=['testimg_3.png'])
 
 # fourior transform original image
 f = np.fft.ifft2(img)
