@@ -56,8 +56,9 @@ def fft_online(argv):
     plt.imshow(magI, cmap='gray')
     plt.show()
     
+    save = filename.split('.')[0]
     cv.normalize(magI, magI, 0, 255, cv.NORM_MINMAX)
-    cv.imwrite(f'{filename}_fft.png', magI)
+    cv.imwrite(f'{save}_fft.png', magI)
     
     cv.waitKey()
     
