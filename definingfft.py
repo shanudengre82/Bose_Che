@@ -4,9 +4,10 @@ import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
 
-def main(argv):
-    filename = argv[0] if len(argv) > 0 else 'EncryptedImage.png'
-    I = cv.imread(cv.samples.findFile(filename), cv.IMREAD_GRAYSCALE)
+def fft_online(argv):
+    filename = argv[0] if len(argv) > 0 else 'testimg_2.png'
+    print(filename)
+    I = cv.imread(filename, cv.IMREAD_GRAYSCALE)
     if I is None:
         print('Error opening image')
         return -1
@@ -22,7 +23,8 @@ def main(argv):
     cv.dft(complexI, complexI)         # this way the result may fit in the source matrix
     
     cv.split(complexI, planes)                   # planes[0] = Re(DFT(I), planes[1] = Im(DFT(I))
-    cv.magnitude(planes[0], planes[1], planes[0])# planes[0] = magnitude
+    
+    cv.magnitude(planes[0], planes[1], planes[0]) # planes[0] = magnitude
     magI = planes[0]
     
     matOfOnes = np.ones(magI.shape, dtype=magI.dtype)
@@ -47,16 +49,20 @@ def main(argv):
     
     cv.normalize(magI, magI, 0, 1, cv.NORM_MINMAX) # Transform the matrix with float values into a
     
-    cv.imwrite('fft_from_onlineOpenCVcode.png', magI)
-    
-    plt.subplot(121)
+    plt.subplot(211)
     plt.imshow(I, cmap='gray')
     # Show the result
-    plt.subplot(122)
+    plt.subplot(212)
     plt.imshow(magI, cmap='gray')
     plt.show()
+    
+    cv.normalize(magI, magI, 0, 255, cv.NORM_MINMAX)
+    cv.imwrite(f'{filename}_fft.png', magI)
+    
     cv.waitKey()
     
-
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    fft_online(sys.argv[1:])
+    # x = cv.imread('fft_from_onlineOpenCVcode.png', cv.IMREAD_GRAYSCALE)
+    # cv.imshow('x', x)
+    # cv.waitKey()
