@@ -19,7 +19,7 @@ img_auto = signal.correlate2d(img, img, boundary='fill', mode='same')
 
 print('2')
 cv.normalize(img_auto, img_auto, 0, 255, cv.NORM_MINMAX)
-cv.imwrite('EncryptedImage.png', img_auto)
+cv.imwrite('EncryptedImage_auto.png', img_auto)
 
 plt.subplot(121)
 plt.imshow(img, cmap = 'gray')
