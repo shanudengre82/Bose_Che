@@ -8,24 +8,21 @@ from definingfft import fft_online
 # reading image
 img = cv.imread('testimg_2.png', cv.IMREAD_GRAYSCALE)
 cv.imshow('testingimage', img)
-
 print(img.shape)
+
 # img_0 = img[:, :, 0]
 # img_1 = img[:, :, 1]
 # img_2 = img[:, :, 2]
-
 # img_square_root = np.zeros(img.shape, dtype='uint8')
 # for i in range(0, img_square_root.shape[0]):
 #     for j in range(0, img_square_root.shape[1]):
-        
 #         # if img[i][j] < 150:
 #         img_square_root[i][j] = np.sqrt(img[i][j])
 #         # else: 
 #         #     pass
-
 # cv.imwrite('Square_root.png', img_copy)
 
-img_square = cv.imread('Square.png', cv.IMREAD_GRAYSCALE)
+img_square = cv.imread('EncryptedImage_center_crop_auto_512.png', cv.IMREAD_GRAYSCALE)
 cv.imshow('Square', img_square)
 
 img_square_root = cv.imread('Square_root.png', cv.IMREAD_GRAYSCALE)
@@ -36,12 +33,10 @@ cv.imshow('Square root', img_square_root)
 # Converting to greyscale
 # gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 # cv.imshow('Encryptedimage gray', gray)
-
 # getting edges
 # for i in range(0, 10):
 #     canny = cv.Canny(img, 0.1+0.2*i, 0.2+10*i)
 #     cv.imshow(f'Edges_{i}', canny)
-
 
 """
 Threshold method. Threshold limits basically make the imgae binary.
@@ -49,7 +44,6 @@ Threshold method. Threshold limits basically make the imgae binary.
 # for i in range(4, 7):
 #     ret, thresh = cv.threshold(img, thresh = 1+i, maxval= 255, type=cv.THRESH_BINARY)
 #     cv.imshow(f'Thresh_{i}', thresh)
-
 # finding contours
 # contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 # print(len(contours))
@@ -78,7 +72,6 @@ cv.imshow(f'Edges_100_200', img_3)
 #     # plt.imshow(magnitude_spectrum, cmap='gray')
 #     plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
 #     plt.show()
-
 
 fft_online(argv=['EncryptedImage.png'])
 
@@ -112,11 +105,10 @@ plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
 plt.show()
 
 # fourior transform
-
 # ret, thresh = cv.threshold(magnitude_spectrum, thresh = 0, maxval= 200, type=cv.THRESH_BINARY)
 # cv.imshow(f'Thresh', thresh)
-      
 # Waittime/delay for a key to be pressed
 # 0 is infinite amount of time (time is in ms)
+
 cv.waitKey(0)
 cv.destroyAllWindows()

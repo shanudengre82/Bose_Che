@@ -1,2 +1,11 @@
+# photos
 *.png
+
+# pdfs and word files
 *.pdf
+
+# notebooks
+*.ipynb
+
+# raw data
+*.txt
