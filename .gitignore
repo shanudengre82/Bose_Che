@@ -1,8 +1,10 @@
 # photos
 *.png
+*.gif
 
 # pdfs and word files
 *.pdf
+*.docx
 
 # notebooks
 *.ipynb

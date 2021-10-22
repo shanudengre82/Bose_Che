@@ -9,7 +9,7 @@ from fineupphaseretirval import fienup_phase_retrieval
 
 np.random.seed(1)
 image = cv.imread('EncryptedImage_fft.png', cv.IMREAD_GRAYSCALE)
-magnitudes = np.abs(np.fft.fft2(image))
+# magnitudes = np.abs(np.fft.fft2(image))
 result = fienup_phase_retrieval(image, beta=0.1, 
                            steps=1000, mode='hybrid', verbose=True)
 
