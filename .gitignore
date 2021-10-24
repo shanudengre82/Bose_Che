@@ -11,3 +11,5 @@
 
 # raw data
 *.txt
+
+*.h5
