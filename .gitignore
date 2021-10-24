@@ -5,6 +5,7 @@
 # pdfs and word files
 *.pdf
 *.docx
+*.doc
 
 # notebooks
 *.ipynb
