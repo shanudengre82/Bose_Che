@@ -3,9 +3,6 @@ import numpy.fft as fft
 import cv2 as cv
 import matplotlib.pyplot as plt
 from EstimatingAutocorr import *
-# import scipy.ndimage as nd
-# import scipy.misc as misc
-
 
 from math import pi
 
